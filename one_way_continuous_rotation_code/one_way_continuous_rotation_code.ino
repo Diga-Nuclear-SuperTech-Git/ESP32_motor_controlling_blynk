@@ -1,5 +1,5 @@
-const int IN3 = 10;
-const int IN4 = 11;
+const int IN3 = 25;
+const int IN4 = 26;
 
 void setup() {
   pinMode(IN3, OUTPUT);

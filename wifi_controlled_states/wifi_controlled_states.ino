@@ -1,12 +1,12 @@
-#define BLYNK_TEMPLATE_ID "YOUR_TEMPLATE_ID"
-#define BLYNK_TEMPLATE_NAME "ESP32 Motor Controller"
-#define BLYNK_AUTH_TOKEN "YOUR_AUTH_TOKEN"
+#define BLYNK_TEMPLATE_ID "TMPL3creuuymd"
+#define BLYNK_TEMPLATE_NAME "ESP 32 motor controller"
+#define BLYNK_AUTH_TOKEN "bLRkm3b2Rxy9mf72ZRuGByqTafXsUs5j"
 
 #include <WiFi.h>
 #include <BlynkSimpleEsp32.h>
 
-char ssid[] = "YOUR_WIFI_NAME";
-char pass[] = "YOUR_WIFI_PASSWORD";
+char ssid[] = "acer ZX";
+char pass[] = "05@pULPULMUM";
 
 const int IN3 = 25;
 const int IN4 = 26;
@@ -36,13 +36,21 @@ BLYNK_WRITE(V0)
 
 void setup()
 {
+  Serial.begin(115200);
+  Serial.println("BOOT");
+  
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
 
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, LOW);
-
+  
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+}
+
+BLYNK_CONNECTED()
+{
+  Serial.println("BLYNK CONNECTED");
 }
 
 void loop()
